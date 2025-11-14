@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/my-portfolio/static/css/main.ea2cfe9e.css",
+    "main.js": "/my-portfolio/static/js/main.57460991.js",
+    "static/js/919.b0d525ce.chunk.js": "/my-portfolio/static/js/919.b0d525ce.chunk.js",
+    "static/media/screen5.jpg": "/my-portfolio/static/media/screen5.a697c8598517ff72c137.jpg",
+    "static/media/screen6.jpg": "/my-portfolio/static/media/screen6.9cc1819b674770db55a1.jpg",
+    "static/media/screen10.png": "/my-portfolio/static/media/screen10.81438892534019cffa82.png",
+    "static/media/screen8.png": "/my-portfolio/static/media/screen8.e774cc0e0aaae373d53d.png",
+    "static/media/screen9.png": "/my-portfolio/static/media/screen9.f6e734d019b05a055742.png",
+    "static/media/screen13.png": "/my-portfolio/static/media/screen13.2d550a67d15cc6da18c6.png",
+    "static/media/screen17.png": "/my-portfolio/static/media/screen17.05eda48c0519a6f9b840.png",
+    "static/media/screen14.png": "/my-portfolio/static/media/screen14.68e14bf675a9f97e2088.png",
+    "static/media/screen11.png": "/my-portfolio/static/media/screen11.513ce9d232bce5fdaf6d.png",
+    "static/media/screen18.png": "/my-portfolio/static/media/screen18.f29268a18baf59d08004.png",
+    "static/media/screen7.png": "/my-portfolio/static/media/screen7.8d342fec31e4ae515b7a.png",
+    "static/media/screen12.png": "/my-portfolio/static/media/screen12.435f7e654eff8bf3763c.png",
+    "static/media/screen16.png": "/my-portfolio/static/media/screen16.e4dad720554245a86794.png",
+    "static/media/screen4.jpg": "/my-portfolio/static/media/screen4.7eb949c32017d7807f5e.jpg",
+    "static/media/screen2.jpg": "/my-portfolio/static/media/screen2.43aacbae55de2446cfed.jpg",
+    "static/media/screen15.png": "/my-portfolio/static/media/screen15.ea2b171500177b45f3ce.png",
+    "static/media/screen3.jpg": "/my-portfolio/static/media/screen3.45d45cd950789810319a.jpg",
+    "static/media/screen1.jpg": "/my-portfolio/static/media/screen1.7e1094dbb351788b593c.jpg",
+    "static/media/Apex-Logo.png": "/my-portfolio/static/media/Apex-Logo.04b4a14b3032edbb0bc2.png",
+    "index.html": "/my-portfolio/index.html",
+    "main.ea2cfe9e.css.map": "/my-portfolio/static/css/main.ea2cfe9e.css.map",
+    "main.57460991.js.map": "/my-portfolio/static/js/main.57460991.js.map",
+    "919.b0d525ce.chunk.js.map": "/my-portfolio/static/js/919.b0d525ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea2cfe9e.css",
+    "static/js/main.57460991.js"
+  ]
+}
