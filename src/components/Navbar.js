@@ -1,0 +1,84 @@
+// src/components/Navbar.js
+import React from "react";
+import { Link } from 'react-scroll';
+
+export default function Navbar() {
+    return (
+        <nav className="navbar">
+            <ul>
+                <li>
+                    <Link 
+                        to="about" 
+                        smooth={true} 
+                        duration={800} 
+                        offset={-80}
+                        spy={true}
+                        activeClass="active"
+                    >
+                        About
+                    </Link>
+                </li>
+                <li>
+                    <Link 
+                        to="experience" 
+                        smooth={true} 
+                        duration={800} 
+                        offset={-80}
+                        spy={true}
+                        activeClass="active"
+                    >
+                        Experience
+                    </Link>
+                </li>
+                <li>
+                    <Link 
+                        to="education" 
+                        smooth={true} 
+                        duration={800} 
+                        offset={-80}
+                        spy={true}
+                        activeClass="active"
+                    >
+                        Education
+                    </Link>
+                </li>
+                <li>
+                    <Link 
+                        to="skills" 
+                        smooth={true} 
+                        duration={800} 
+                        offset={-80}
+                        spy={true}
+                        activeClass="active"
+                    >
+                        Skills
+                    </Link>
+                </li>
+                <li>
+                    <Link 
+                        to="projects" 
+                        smooth={true} 
+                        duration={800} 
+                        offset={-80}
+                        spy={true}
+                        activeClass="active"
+                    >
+                        Projects
+                    </Link>
+                </li>
+                <li>
+                    <Link 
+                        to="contact" 
+                        smooth={true} 
+                        duration={800} 
+                        offset={-80}
+                        spy={true}
+                        activeClass="active"
+                    >
+                        Contact
+                    </Link>
+                </li>
+            </ul>
+        </nav>
+    );
+}
