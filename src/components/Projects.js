@@ -22,6 +22,7 @@ const finance_link = "https://the-debugger2.github.io/Student-Finance-System/log
 const wababa_link = "https://github.com/Kasweka1/";
 const tic_tac_toe_link = " https://the-debugger2.github.io/tic-tac-toe/"
 const colab_link = "https://colab.research.google.com/drive/1afBU4PPGjj63e4NiQNYoPUFgfEoc6OIx?usp=drive_link"
+const portfolio_link = "https://the-debugger2.github.io/lupupas-Portfolio/"
 
 // Helper function to convert WababaDev text to clickable link
 function parseDescription(text) {
@@ -105,6 +106,15 @@ const projects = [
     technologies: ["Python", "pandas", "Colab", "Machine Learning"],
     images: [],
     link: colab_link,
+  },
+  {
+    id: "p-Portfolio",
+    title: "Portfolio",
+    description:
+      "Created an artist portfolio for a client to showcase her work and Vision",
+    technologies: ["React", "Css", "json", "Javascript"],
+    images: [],
+    link: portfolio_link,
   },
 ];
 
