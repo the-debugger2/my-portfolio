@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa';
 import{ SiPhp,SiMysql, SiPostman, SiJupyter } from 'react-icons/si';
 import { BiLogoTypescript, BiSolidZap } from "react-icons/bi";
+import {DiNpm} from "react-icons/di";
 
 const Skills = () => {
   const skills = [
@@ -26,6 +27,7 @@ const Skills = () => {
     { id: 11, icon: <SiPostman />, label: 'Postman' },
     { id: 12, icon: <BiSolidZap />, label: 'OWASP' },
     { id: 13, icon: <SiJupyter />, label: 'Jupyter' },
+    { id: 14, icon: <DiNpm />, label: 'NPM' },
   ];
 
   return (

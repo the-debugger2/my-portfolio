@@ -10,13 +10,14 @@ const experienceData = [{
     endDate: '2025-02-28',
     location: 'Chalala, along the lusaka-kasama road',
     isCurrent: false,
-    summary: 'I participated in an internship program at Lusaka Apex Medical University where I am gaining practical experience in my field of study.',
+    summary: 'I participated in an internship program at Lusaka Apex Medical University where I supported the IT team and gained practical exposure to hardware and software systems.',
     responsibilities: [
-        'Assisted in the maintenance of the university\'s IT infrastructure',
-        'Furthered my understanding of software development practices',
-        'Collaborated with faculty to create engaging course content',
-        'Participated in code reviews and contributed to team knowledge sharing',
-        'Gained exposure to various programming languages and development tools'
+        'Assisted with routine maintenance of computers and network equipment',
+        'Helped troubleshoot hardware issues for staff and students',
+        'Supported installation and configuration of basic software tools',
+        'Observed and learned from senior staff during system upgrades',
+        'Provided general technical support under supervision',
+        'Gained exposure to various programming languages and tools'
     ],
     technologies: ['React', 'TypeScript', 'PHP', 'MySQL', 'REST APIs', 'Git'],
     logo: apexLogo
@@ -29,13 +30,14 @@ const experienceData = [{
     endDate: 'present',
     location: 'Chalala, along the lusaka-kasama road',
     isCurrent: true,
-    summary: 'I am currently undertaking an internship at Lusaka Apex Medical University to further enhance my practical skills and industry knowledge.',
+    summary: 'I am currently undertaking an internship at Lusaka Apex Medical University, assisting with day-to-day IT operations and gaining further hands-on experience with hardware systems.',
     responsibilities: [
-        'Assisted in the maintenance of the university\'s IT infrastructure',
-        'Furthered my understanding of software development practices',
-        'Collaborated with faculty to create engaging course content',
-        'Participated in code reviews and contributed to team knowledge sharing',
-        'Gained exposure to various programming languages and development tools'
+        'Helped with hardware setup and routine checks of lab equipment',
+        'Assisted in diagnosing and fixing minor computer and peripheral issues',
+        'Supported faculty with basic technical needs during classes',
+        'Shadowed senior technicians during maintenance and repair tasks',
+        'Learned to document issues and report them to supervisors',
+        'Gained exposure to various programming languages and tools'
     ],
     technologies: ['Node.js', 'OWASP', 'React', 'PHP', 'PostMan', 'GitHub'],
     logo: apexLogo
