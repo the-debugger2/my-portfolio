@@ -1,7 +1,7 @@
 .App {
     font-family: popins, sans-serif;
     text-align: center;
-    background: linear-gradient(to right, #69a09a, #00a28f);
+    background: linear-gradient(to right, #7dd9de, #008fa2);
     overflow-x: scroll;
 }
 
@@ -37,11 +37,11 @@ ul li a {
 }
 
 ul li a:hover {
-    background-color: #22c55e;
+    background-color: #00e1ff;
 }
 
 ul li a.active {
-    background-color: #22c55e;
+    background-color: #00e1ff;
 }
 
 .about-section {
@@ -74,7 +74,7 @@ ul li a.active {
 }
 
 .highlight {
-    color: #22c55e;
+    color: #00e1ff;
     font-weight: bold;
     display: inline-block;
     animation: bounce 4s infinite ease-in-out;
@@ -94,7 +94,7 @@ ul li a.active {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #69a09a, #00a28f);
+    background: linear-gradient(to top, #00332d, #008fa2);
 }
 
 .contact-title {
@@ -126,7 +126,7 @@ ul li a.active {
 
 .contact-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    background-color: rgb(244, 244, 244);
+    background-color: #008fa2;
 }
 
 .contact-icon {
@@ -145,7 +145,7 @@ ul li a.active {
 }
 
 .contact-icon:hover {
-    color: #22c55e;
+    color: #00e1ff;
 }
 
 a {
@@ -183,6 +183,7 @@ a {
     padding: 1.5rem;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 .education-card:hover {
@@ -235,17 +236,21 @@ a {
     list-style-type: none;
     padding-left: 0;
     margin: 1rem 0 0 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .education-list-item {
+    text-align: left;
     font-weight: 700;
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.5rem;
     color: #000000;
     line-height: 1.4;
-    background-color: #80ff00;
-    border-radius: 7px;
+    background-color: #00e1ff;
+    border-radius: 2px;
+    width: auto;
 }
 
 .education-list-item::before {
@@ -304,6 +309,7 @@ a {
     padding: 1.5rem;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 .experience-card:hover {
@@ -376,12 +382,13 @@ a {
 }
 
 .tech-tag {
-    background-color: #ebffeb;
-    color: #2bb059;
+    background-color: #ebfcff;
+    color: #008fa2;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 500;
+    border: #008fa2 1px solid;
 }
 
 .projects-section h2 {
@@ -430,13 +437,23 @@ a {
 .skill-icon {
     font-size: 4rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #000000;
+    cursor: pointer;
 }
 
 .skill-icon:hover {
-    color: #22c55e;
+    color: #00e1ff;
     background-color: linear-gradient(to right, #69a09a, #00ffe1);
     border-radius: 10px;
+}
+
+.skill-label {
+    color: white;
+    cursor: pointer;
+}
+
+.skill-label:hover {
+    color: #00e1ff;
 }
 
 .skill-grid {
@@ -507,7 +524,7 @@ a {
 
 .view-btn {
     justify-self: center;
-    background: #22c55e;
+    background: #008fa2;
     color: white;
     border: none;
     padding: 0.5rem 0.75rem;
@@ -517,7 +534,7 @@ a {
 }
 
 .view-btn:hover {
-    background: #16a34a;
+    background: #00e1ff;
 }
 
 
