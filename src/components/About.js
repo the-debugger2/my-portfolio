@@ -4,6 +4,7 @@ const About = () => {
     return (
         <section id="about" className="about-section">
             <h2 className="about-heading">About</h2>
+            <div className="about-wrapper">
             <div className="about-content">
                 <h3>Hi, I'm <span className="highlight">Brighton Mubanga</span></h3>
                 <p>
@@ -12,9 +13,11 @@ const About = () => {
                     My approach combines creativity, practicality, and attention to detail, whether I'm solving a problem, building something new, or improving an existing system.
                 </p>
                 <p>
-                    What drives me most is the process of bringing ideas to life, watching a concept grow into something real and useful is a different kind of thrill. 
-                    Outside of work, I enjoy exploring new tools and learning better ways to approach complex challenges.
+                    What drives me most is the process of bringing ideas to life, watching a concept grow into something real and useful.
+                    I thrive on collaboration and learning from others, always looking for ways to improve and innovate.
+                    At the end of the day, I'm passionate about making a positive impact through my work, no matter how big or small.
                 </p>
+            </div>
             </div>
         </section>
     );

@@ -1,8 +1,88 @@
 .App {
-    font-family: popins, sans-serif;
+    font-family: helvetica, "sans-serif";
     text-align: center;
     background: linear-gradient(to right, #7dd9de, #008fa2);
-    overflow-x: scroll;
+    overflow-x: hidden;
+    margin-top: 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+
+/* Keyframe animations for page transitions */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Global layout helpers to prevent horizontal overflow */
+
+html,
+body,
+#root {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+}
+
+#root {
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* Section base styles with snap scrolling and transitions */
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    animation: fadeInUp 0.8s ease-out;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 nav {
@@ -25,7 +105,7 @@ nav ul {
 }
 
 ul li {
-    float: left;
+    display: inline-block;
 }
 
 ul li a {
@@ -45,9 +125,10 @@ ul li a.active {
 }
 
 .about-section {
-    padding: 4rem 0rem 1rem 2rem;
-    max-width: 100%;
-    margin: 0 14% 0 10%;
+    padding: 4rem 1.5rem 1rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .about-heading {
@@ -56,6 +137,7 @@ ul li a.active {
     font-size: 2.5rem;
     color: #ffffff;
     position: relative;
+    animation: slideInLeft 0.8s ease-out;
 }
 
 .about-content {
@@ -64,6 +146,16 @@ ul li a.active {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
+    animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+.about-wrapper {
+    transition: transform 0.8s ease-in-out, box-shadow 0.4s ease;
+}
+
+.about-wrapper:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .about-content h3 {
@@ -95,6 +187,7 @@ ul li a.active {
     justify-content: center;
     min-height: 100vh;
     background: linear-gradient(to top, #00332d, #008fa2);
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .contact-title {
@@ -102,6 +195,7 @@ ul li a.active {
     font-weight: bold;
     margin-bottom: 2rem;
     color: #ffffff;
+    animation: slideInLeft 0.8s ease-out;
 }
 
 .contact-grid {
@@ -121,31 +215,39 @@ ul li a.active {
     border-radius: 20rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.6s ease;
+    cursor: pointer;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .contact-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    background-color: #008fa2;
+    transform: scale(1.111)
 }
 
 .contact-icon {
     font-size: 3rem;
     margin-bottom: 0.5rem;
     color: #333;
+    transition: transform 0.8s ease;
 }
 
 .contact-label {
     color: #555;
     font-size: 1rem;
+    transition: transform 0.8s ease;
 }
 
 .contact-label:hover {
     color: #000;
+    transform: scale(1.2);
 }
 
 .contact-icon:hover {
     color: #00e1ff;
+    transform: scale(1.2);
+    transition: transform 0.8s ease;
+    transform: rotate(20deg);
 }
 
 a {
@@ -169,6 +271,7 @@ a {
     margin-bottom: 3rem;
     font-size: 2.5rem;
     color: #ffffff;
+    animation: slideInLeft 0.8s ease-out;
 }
 
 .education-grid {
@@ -184,10 +287,12 @@ a {
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .education-card:hover {
     transform: translateY(-5px);
+    transform: scale(1.06);
 }
 
 .education-card-header {
@@ -204,6 +309,7 @@ a {
     font-size: 1.25rem;
     color: #2d3748;
     justify-content: center;
+    font-weight: 800;
 }
 
 .education-institution {
@@ -222,9 +328,16 @@ a {
 }
 
 .education-dates {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: #718096;
     white-space: nowrap;
+    font-weight: 600;
+}
+
+.education-dates:hover {
+    color: #008fa2;
+    transform: scale(1.2);
+    transition: transform 0.9s ease-in-out;
 }
 
 .education-gpa {
@@ -253,8 +366,15 @@ a {
     width: auto;
 }
 
+.education-list-item:hover {
+    background-color: #008fa2;
+    color: #ffffff;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
 .education-list-item::before {
-    content: "•";
+    content: "➖";
     position: absolute;
     left: 0;
     color: #264b82;
@@ -279,6 +399,7 @@ a {
     margin-bottom: 3rem;
     font-size: 2.5rem;
     color: #ffffff;
+    animation: slideInLeft 0.8s ease-out;
 }
 
 .experience-grid {
@@ -306,10 +427,12 @@ a {
     flex-direction: column;
     background: #ffffff;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1rem;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .experience-card:hover {
@@ -387,8 +510,17 @@ a {
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 700;
     border: #008fa2 1px solid;
+    transition: transform 1.0s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tech-tag:hover {
+    background-color: #00e1ff7e;
+    color: #ffffff;
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .projects-section h2 {
@@ -422,6 +554,7 @@ a {
     margin-bottom: 3rem;
     font-size: 2.5rem;
     color: #ffffff;
+    animation: slideInLeft 0.8s ease-out;
 }
 
 .skills-section h3 {
@@ -445,15 +578,21 @@ a {
     color: #00e1ff;
     background-color: linear-gradient(to right, #69a09a, #00ffe1);
     border-radius: 10px;
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
 }
 
 .skill-label {
     color: white;
     cursor: pointer;
+    font-weight: bold;
+    font-size: large;
 }
 
 .skill-label:hover {
     color: #00e1ff;
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
 }
 
 .skill-grid {
@@ -472,6 +611,14 @@ a {
     padding: 1.5rem;
     text-decoration: none;
     transition: box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.skill-card:hover {
+    transition: box-shadow 0.7s ease;
+    box-shadow: 0 4px 6px 4px rgba(255, 255, 255, 0.618);
+    border-radius: 170px;
+    background-color: #abd6dbc8;
 }
 
 .projects-section {
@@ -485,6 +632,7 @@ a {
     margin-bottom: 2rem;
     font-size: 2rem;
     color: #ffffff;
+    animation: slideInLeft 0.8s ease-out;
 }
 
 .projects-grid {
@@ -502,7 +650,13 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    animation: opacity 0.65s ease-out;
+    animation: fadeInUp 0.8s ease-out;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.42);
 }
 
 .project-card h3 {
@@ -516,10 +670,43 @@ a {
     margin-bottom: 0.75rem;
 }
 
+
+/* Project thumbnail */
+
+.project-thumb {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 0.5rem 0 0.75rem 0;
+}
+
+.project-thumb:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s ease;
+}
+
+
+/* Scroll reveal animation */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 600ms cubic-bezier(.2, .9, .3, 1), transform 600ms cubic-bezier(.2, .9, .3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .tech-list {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: #6b7280;
     margin-bottom: 1rem;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
 .view-btn {
@@ -528,13 +715,16 @@ a {
     color: white;
     border: none;
     padding: 0.5rem 0.75rem;
-    border-radius: 6px;
+    border-radius: 15px;
     cursor: pointer;
     align-self: center;
+    font-weight: bold;
 }
 
 .view-btn:hover {
     background: #00e1ff;
+    transform: scale(1.2);
+    transition: transform 0.7s ease;
 }
 
 
