@@ -565,6 +565,13 @@ a {
     font-weight: bold;
     font-size: large;
     padding-left: 2.7rem;
+    cursor: pointer;
+}
+
+.skills-section h3:hover {
+    color: whitesmoke;
+    transform: translateX(30px);
+    transition: transform 0.9s ease-in-out;
 }
 
 .skill-icon {
@@ -684,6 +691,7 @@ a {
 .project-thumb:hover {
     transform: scale(1.15);
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
 

@@ -20,6 +20,10 @@ import screen15 from "../Assets/Images/Projects/screen15.png";
 import screen16 from "../Assets/Images/Projects/screen16.png";
 import screen17 from "../Assets/Images/Projects/screen17.png";
 import screen18 from "../Assets/Images/Projects/screen18.png";
+import screen19 from "../Assets/Images/Projects/screen19.jpeg";
+import screen20 from "../Assets/Images/Projects/screen20.jpeg";
+import screen21 from "../Assets/Images/Projects/screen21.jpeg";
+import screen22 from "../Assets/Images/Projects/screen22.jpeg";
 import maze1 from "../Assets/Images/Projects/maze1.jpeg";
 import maze2 from "../Assets/Images/Projects/maze2.jpeg";
 import maze3 from "../Assets/Images/Projects/maze3.jpeg";
@@ -30,12 +34,15 @@ import finance from "../Assets/Images/finance.png";
 import judgement from "../Assets/Images/Judgement.png";
 import portfolio from "../Assets/Images/portfolio.png";
 import ticTacToe from "../Assets/Images/tic-tac-toe.png";
+import retail_img from "../Assets/Images/retail.png";
 
 const finance_link = "https://the-debugger2.github.io/Student-Finance-System/login/Login.html";
 const wababa_link = "https://github.com/Kasweka1/";
 const tic_tac_toe_link = "https://the-debugger2.github.io/tic-tac-toe/";
 const colab_link = "https://colab.research.google.com/drive/1afBU4PPGjj63e4NiQNYoPUFgfEoc6OIx?usp=drive_link";
 const portfolio_link = "https://the-debugger2.github.io/lupupas-Portfolio/";
+const procedure_link= "https://proceduremanagementsystem--1fm48wfb99.expo.app/auth";
+const retail_analytics_link ="https://docs.google.com/document/d/1HgaKYG6RPNXlJWBv5l-ads687BdZ1xyF/edit?usp=sharing&ouid=111524750817753332399&rtpof=true&sd=true";
 
 // Turn "WababaDev" into a clickable link
 function parseDescription(text) {
@@ -141,6 +148,31 @@ const projects = [
     link: colab_link,
   },
   {
+  id: "p-retailDataEngineering",
+  title: "Retail Data Pipeline",
+  description:
+    "An end-to-end data pipeline that automates ingestion from Azure Blob Storage into SQL Server via Azure Data Factory. Cleans and transforms raw retail data using stored procedures, builds analytical views, and delivers interactive Power BI dashboards using advanced DAX measures.",
+  technologies: [
+    "Azure Data Factory",
+    "SQL Server",
+    "Power BI",
+    "Azure Blob Storage"
+  ],
+  images: [], 
+  thumbnail: retail_img,
+  link: retail_analytics_link,
+},
+  {
+    id: "p-procedureManagement",
+    title: "Procedure Management System ",
+    description:
+      "Front end in ReactNative, backend in Node.js and data persisted in postgres(Supabase). Gets company standard practices and creates a central point for all the procedures per department. For now it has admin only functions but future iterations involve employee accounts and features to assign tasks to employees. note: this project a mobile app but also deployed as a website for testing purposes only and resources being utilized are free so to access server you need to wait a minute or so.",
+    technologies: ["ReactNative", "Node.js", "PostgreSQL"],
+    images: [screen19, screen20, screen21, screen22],
+    thumbnail: screen21,
+    link: procedure_link,
+  },
+  {
     id: "p-portfolio",
     title: "Portfolio",
     description: "Created an artist portfolio for a client to showcase her work and vision.",
@@ -195,7 +227,7 @@ export default function Projects() {
 
             <div className="project-meta">
               <div className="tech-list">
-                {project.technologies.join(" • ")}
+                {project.technologies.join(" ▪ ")}
               </div>
             </div>
 

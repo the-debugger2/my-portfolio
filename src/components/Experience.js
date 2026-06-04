@@ -27,9 +27,9 @@ const experienceData = [{
     title: 'Intern',
     company: 'Lusaka Apex Medical University',
     startDate: '2025-11-04',
-    endDate: 'present',
+    endDate: '2026-04-16',
     location: 'Chalala, along the lusaka-kasama road',
-    isCurrent: true,
+    isCurrent: false,
     summary: 'I am currently undertaking an internship at Lusaka Apex Medical University, assisting with day-to-day IT operations and gaining further hands-on experience with hardware systems.',
     responsibilities: [
         'Helped with hardware setup and routine checks of lab equipment',
