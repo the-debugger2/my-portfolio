@@ -1,7 +1,4 @@
-// src/components/Projects.js
-
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import screen1 from "../Assets/Images/Projects/screen1.jpg";
 import screen2 from "../Assets/Images/Projects/screen2.jpg";
 import screen3 from "../Assets/Images/Projects/screen3.jpg";
@@ -29,20 +26,29 @@ import maze2 from "../Assets/Images/Projects/maze2.jpeg";
 import maze3 from "../Assets/Images/Projects/maze3.jpeg";
 import maze4 from "../Assets/Images/Projects/maze4.jpeg";
 import humanoid1 from "../Assets/Images/Projects/humanoid1.jpeg";
-import noImage from "../Assets/Images/no_image.webp";
 import finance from "../Assets/Images/finance.png";
 import judgement from "../Assets/Images/Judgement.png";
 import portfolio from "../Assets/Images/portfolio.png";
 import ticTacToe from "../Assets/Images/tic-tac-toe.png";
 import retail_img from "../Assets/Images/retail.png";
+import pos_img_1 from "../Assets/Images/Projects/pocket POS/pos_img_1.jpeg";
+import pos_img_2 from "../Assets/Images/Projects/pocket POS/pos_img_2.jpeg";
+import pos_img_3 from "../Assets/Images/Projects/pocket POS/pos_img_3.jpeg";
+import pos_img_4 from "../Assets/Images/Projects/pocket POS/pos_img_4.jpeg";
+import pos_img_5 from "../Assets/Images/Projects/pocket POS/pos_img_5.jpeg";
+import pos_img_6 from "../Assets/Images/Projects/pocket POS/pos_img_6.jpeg";
+import pos_img_7 from "../Assets/Images/Projects/pocket POS/pos_img_7.jpeg";
+import pos_img_8 from "../Assets/Images/Projects/pocket POS/pos_img_8.jpeg";
+import pos_img_9 from "../Assets/Images/Projects/pocket POS/pos_img_9.jpeg";
+import pos_img_10 from "../Assets/Images/Projects/pocket POS/pos_img_10.jpeg";
 
 const finance_link = "https://the-debugger2.github.io/Student-Finance-System/login/Login.html";
 const wababa_link = "https://github.com/Kasweka1/";
 const tic_tac_toe_link = "https://the-debugger2.github.io/tic-tac-toe/";
 const colab_link = "https://colab.research.google.com/drive/1afBU4PPGjj63e4NiQNYoPUFgfEoc6OIx?usp=drive_link";
 const portfolio_link = "https://the-debugger2.github.io/lupupas-Portfolio/";
-const procedure_link= "https://proceduremanagementsystem--1fm48wfb99.expo.app/auth";
-const retail_analytics_link ="https://docs.google.com/document/d/1HgaKYG6RPNXlJWBv5l-ads687BdZ1xyF/edit?usp=sharing&ouid=111524750817753332399&rtpof=true&sd=true";
+const procedure_link = "https://proceduremanagementsystem--1fm48wfb99.expo.app/auth";
+const retail_analytics_link = "https://docs.google.com/document/d/1HgaKYG6RPNXlJWBv5l-ads687BdZ1xyF/edit?usp=sharing&ouid=111524750817753332399&rtpof=true&sd=true";
 
 // Turn "WababaDev" into a clickable link
 function parseDescription(text) {
@@ -76,13 +82,13 @@ const projects = [
     link: tic_tac_toe_link,
   },
   {
-    id: "p-hospital",
-    title: "Hospital Management System",
+    id: "p-MobilePOS",
+    title: "Mobile Point of Sale ",
     description:
-      "Front end in HTML/CSS, backend in PHP with a MySQL database. Handles adding/viewing/deleting patients, viewing wards and adjusting number of beds.",
-    technologies: ["HTML", "CSS", "PHP", "MySQL"],
-    images: [],
-    thumbnail: noImage,
+      "Front end in React, backend using node.js and SQLite. You can scan barcodes, add products to the inventory, view the total, and checkout. The backend handles sales data and processing.",
+    technologies: ["React", "Node.js", "Express", "SQLite"],
+    images: [pos_img_1,pos_img_3,pos_img_4,pos_img_5,pos_img_6,pos_img_7,pos_img_8,pos_img_9,pos_img_10],
+    thumbnail: pos_img_2,
     link: null,
   },
   {
@@ -148,20 +154,20 @@ const projects = [
     link: colab_link,
   },
   {
-  id: "p-retailDataEngineering",
-  title: "Retail Data Pipeline",
-  description:
-    "An end-to-end data pipeline that automates ingestion from Azure Blob Storage into SQL Server via Azure Data Factory. Cleans and transforms raw retail data using stored procedures, builds analytical views, and delivers interactive Power BI dashboards using advanced DAX measures.",
-  technologies: [
-    "Azure Data Factory",
-    "SQL Server",
-    "Power BI",
-    "Azure Blob Storage"
-  ],
-  images: [], 
-  thumbnail: retail_img,
-  link: retail_analytics_link,
-},
+    id: "p-retailDataEngineering",
+    title: "Retail Data Pipeline",
+    description:
+      "An end-to-end data pipeline that automates ingestion from Azure Blob Storage into SQL Server via Azure Data Factory. Cleans and transforms raw retail data using stored procedures, builds analytical views, and delivers interactive Power BI dashboards using advanced DAX measures.",
+    technologies: [
+      "Azure Data Factory",
+      "SQL Server",
+      "Power BI",
+      "Azure Blob Storage",
+    ],
+    images: [],
+    thumbnail: retail_img,
+    link: retail_analytics_link,
+  },
   {
     id: "p-procedureManagement",
     title: "Procedure Management System ",
@@ -186,6 +192,40 @@ const projects = [
 export default function Projects() {
   const [selected, setSelected] = useState(null);
   const [slideIndex, setSlideIndex] = useState(0);
+
+  // Scroll-reveal: adds "is-visible" to each card once it enters the viewport.
+  // Runs after the cards are rendered, so it always finds them.
+  useEffect(() => {
+    const cards = document.querySelectorAll(".project-card.reveal");
+
+    // Fallback for browsers without IntersectionObserver: just show everything
+    if (!("IntersectionObserver" in window)) {
+      cards.forEach((card) => card.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
+
+  // Make sure page scrolling is restored if this component unmounts with the modal open
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   function openProject(project) {
     setSelected(project);
@@ -221,6 +261,8 @@ export default function Projects() {
               className="project-thumb"
               src={project.thumbnail}
               alt={project.title + " thumbnail"}
+              loading="lazy"
+              decoding="async"
             />
 
             <p className="project-desc">{project.description}</p>

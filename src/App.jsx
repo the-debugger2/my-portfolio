@@ -28,6 +28,7 @@ function App() {
 <Element name="skills">
         <Skills />
       </Element>
+      
       <Element name="projects">
         <Projects />
       </Element>
