@@ -6,7 +6,6 @@ const csp = [
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src https://fonts.gstatic.com",
     "img-src 'self' data: https://i.ytimg.com",
-    "frame-src https://www.youtube.com",
     "connect-src 'self'",
     "object-src 'none'",
     "base-uri 'self'",
@@ -23,7 +22,7 @@ const securityMeta = () => ({
 })
 
 export default defineConfig({
-    base: "/Brightons-Portfolio/",
+    base: "/my-portfolio/",
     plugins: [react(), securityMeta()],
     server: {
         port: 3000,

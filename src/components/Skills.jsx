@@ -27,6 +27,7 @@ import {
   SiFlutter,
   SiDart,
   SiUnity,
+  SiLaravel
 } from "react-icons/si";
 import { DiNpm } from "react-icons/di";
 
@@ -53,6 +54,7 @@ const skillGroups = [
       { icon: <SiMysql />, label: "MySQL" },
       { icon: <SiPostgresql />, label: "PostgreSQL" },
       { icon: <SiSupabase />, label: "Supabase" },
+      { icon: <SiLaravel />, label: "Laravel" },
     ],
   },
   {
